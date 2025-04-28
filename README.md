@@ -13,7 +13,7 @@ A web app that fetches characters from the Rick & Morty API and lets you build y
 
 ## 🔗 Live Demo
 
-> [View it on GitHub Pages](https://github.com/MiladModasir)  
+> [View it on GitHub Pages][View it on GitHub Pages](https://miladmodasir.github.io/rick-and-morty-favorites)
 
 ---
 
@@ -42,8 +42,8 @@ A web app that fetches characters from the Rick & Morty API and lets you build y
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/MiladModasir/   rick-and-morty-favorites.git
+
 
 
 
