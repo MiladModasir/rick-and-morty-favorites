@@ -1,116 +1,133 @@
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Global Styles */
 body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.4;
-  padding: 16px;
-  background: #1aad88;
-}
-
-
-h1, h2 {
-  text-align: center;
-  margin-bottom: 16px;
-}
-h1{
-  margin: auto;
-}
-
-.controls {
+  font-family: 'Playwrite VN', sans-serif;
+  background-color: #16a085;
+  color: #fff;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 16px;
+  padding: 2rem;
+  text-align: center;
 }
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: slideIn 0.7s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  color: #f1f1f1;
+}
+
+/* Search Input */
+#search {
+  width: 300px;
+  padding: 10px 15px;
+  margin: 1rem 0 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+#search:focus {
+  outline: none;
+  box-shadow: 0 0 8px #2ecc71;
+}
+
+/* Controls */
+.controls {
+  margin-bottom: 1rem;
+}
+
 button {
-  padding: 8px 16px;
+  background-color: #2ecc71;
+  color: white;
   border: none;
   border-radius: 6px;
-  background-color: #0077ff;
-  color: #fff;
-  font-size: 0.9rem;
+  padding: 10px 16px;
+  margin: 0 5px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
+
 button:hover {
-  background-color: #005fcc;
+  background-color: #27ae60;
 }
 
-/* Grid layout for collection & favorites */
-#collection,
-#favorites {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
+button:active {
+  transform: scale(3.95);
 }
 
-/* Card styling */
+/* Card Containers */
+#collection, #favorites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Cards */
 .card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  background-color: white;
+  color: black;
+  width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: center;
+  transition: transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease forwards;
 }
+
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  border-bottom: 1px solid #eee;
 }
+
 .card h3 {
-  margin: 8px 0 4px;
   font-size: 1.1rem;
+  margin: 0.5rem 0;
 }
+
 .card p {
-  margin-bottom: 12px;
-  color: #555;
   font-size: 0.9rem;
+  margin: 0.25rem 0;
 }
 
-/* Total summary */
+/* Total Episodes */
 #total-episodes {
-  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 16px;
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  #collection,
-  #favorites {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
-  }
-  .card img {
-    height: 140px;
-  }
-}
-
-  @media (max-width: 480px) {
-  body {
-    padding: 8px;
-  }
-  .controls {
-    flex-direction: column;
-    gap: 8px;
-  }
-  button {
-    width: 100%;
-  }
-  #collection,
-  #favorites {
-    grid-template-columns: 1fr;
-  }
+  color: #ecf0f1;
 }
