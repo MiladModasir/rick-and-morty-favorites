@@ -7,17 +7,16 @@ const container = document.querySelector("#collection");
 const favoritesContainer = document.querySelector("#favorites");
 
 // Fetch, build cards, and wire up initial total & click‐updates
-function fetchCharacters(urls, limit = 40) {
+  function fetchCharacters(urls, limit = 40) {
   Promise.all(urls.map((url) => fetch(url).then((res) => res.json())))
   .then((pages) => {
     const allCharacters = pages.flatMap((page) => page.results);
     const characters = allCharacters.slice(0, limit);
       characters.forEach((character) => createCard(character));
     // Initial total after all cards are in place
-    updateTotalEpisodes();
   })
 .catch((err) => console.error("Error fetching characters:", err));
-}
+} 
 
 function filterCardByName(searchCard) {
   const card = Array.from(container.children);
@@ -59,10 +58,29 @@ function searchCard () {
         } else {
           container.appendChild(card);
         }
-        updateTotalEpisodes();
+        const speciesSummary = getSpeciesSummaryFromDOM(favoritesContainer);
+        displaySpeciesSummary(speciesSummary);
       });
       container.appendChild(card);
     }
+function displaySpeciesSummary(summaryobj) {
+  const summaryDiv = document.getElementById("species-summary");
+  summaryDiv.innerHTML = "";
+
+  // 💥 Add total character count
+  const total = Object.values(summaryobj).reduce((acc, val) => acc + val, 0);
+  const totalEl = document.createElement("h3");
+  totalEl.textContent = `Total Characters in Favorites: ${total}`;
+  summaryDiv.appendChild(totalEl);
+
+  // 💥 Then list each species
+  for (let species in summaryobj) {
+    const p = document.createElement("p");
+    p.textContent = `${species}: ${summaryobj[species]}`;
+    summaryDiv.appendChild(p);
+  }
+}
+
 
 // Sort helper
 function sortCards(targetContainer, ascending = true) {
@@ -90,15 +108,18 @@ sortCards(favoritesContainer, false);
 }
 
 
+
 // Recalculate & display total episodes in the “collection”
-function updateTotalEpisodes() {
+function getSpeciesSummaryFromDOM(container) {
   const cards = Array.from(container.children);
-  const sum = cards.reduce(
-    (acc, card) => acc + Number(card.dataset.episode),
-    0
-  );
-  document.querySelector("#total-episodes span").textContent = sum;
+  return cards.reduce((acc, card) => {
+    const speciesText = card.querySelector("p:nth-of-type(2)").textContent;
+    const species = speciesText.replace("Species: ", "").trim();
+    acc[species] = (acc[species] || 0) + 1;
+    return acc;
+  }, {});
 }
+
 function init () {
   fetchCharacters(apiUrls);
   wireUpSortButtons();
