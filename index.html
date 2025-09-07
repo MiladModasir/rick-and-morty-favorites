@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick and Morty Favorites</title>
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rick and Morty Favorites</title>
-  <link rel="stylesheet" href="./CSS/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&family=Tagesschrift&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <h1>Rick and Morty Favorites 🚀</h1>
-  <div class="controls">
-    <button id="sortAZ">sort A-Z</button>
-    <button id="sortZA">sort Z-A</button>
-  </div>
-  <input type="text" id="search">
-  <h2>Favorites ❤️</h2>
-  <div id="favorites"></div>
+  <body>
+    <h1>Rick and Morty Favorites 🚀</h1>
+    <div class="controls">
+      <button id="sortAZ">sort A-Z</button>
+      <button id="sortZA">sort Z-A</button>
+      <button id="sortMostEpisodes">Most Episodes</button>
+      <button id="sortLeastEpisodes">Least Episodes</button>
+    </div>
+    <label for="search">Search Characters:</label>
+    <input type="text" id="search" title="Search for a character" placeholder="Type character name..." />
+    <h2>Favorites ❤️</h2>
+    <div id="favorites"></div>
     <div id="species-summary"></div>
-  <h2>Full Collection</h2>
-  <div id="character-cards"></div>
-  <div id="collection"></div>
-  
-  <script src="index.js"></script>
+    <h2>Full Collection</h2>
+    <div id="character-cards"></div>
+    <div id="collection"></div>
 
-</body>
-
+    <script src="index.js"></script>
+  </body>
 </html>

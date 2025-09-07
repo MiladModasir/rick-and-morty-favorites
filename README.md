@@ -1,49 +1,40 @@
-# rick-and-morty-favorites
-Project Structure
-├── index.html
-├── index.js
-├── styles.css
-├── README.md
+# Rick and Morty Favorites 🚀
 
-# Rick and Morty Favorites 🚀❤️
-
-A web app that fetches characters from the Rick & Morty API and lets you build your own “Favorites” list while keeping track of the total episode appearances. Built with vanilla JavaScript, HTML & CSS.
-
----
-
-## 🔗 Live Demo
-
-> [View it on GitHub Pages][View it on GitHub Pages](https://miladmodasir.github.io/rick-and-morty-favorites)
-
----
-
-
+A fun web app built with **Vanilla JavaScript** and the [Rick & Morty API](https://rickandmortyapi.com/).  
+Browse characters, save your favorites, and get live stats on species distribution.
 
 ---
 
 ## ✨ Features
 
-- Fetches up to 30 characters from the Rick & Morty API  
-- Displays character image, name, and status  
-- Click to add/remove favorites  
-- Sort collection & favorites A–Z or Z–A  
-- Live-updating total of all episodes among collection  
+- Fetch characters from the Rick & Morty API
+- Add/remove favorites with **localStorage persistence**
+- Live species summary (per species + total)
+- Sort options:
+  - **A–Z** / **Z–A**
+  - **Most Episodes** / **Least Episodes**
+- Debounced search with empty state message
+- Loading + error states with retry
+- Responsive, lightweight UI
 
 ---
 
-## 🚀 Getting Started
+## 📸 Screenshot
 
-### Prerequisites
+![App Screenshot](./assets/screenshot.png)
 
-- A modern browser (Chrome, Firefox, Safari, Edge)  
-- (Optional) A local web server if you need one (e.g. `Live Server` VS Code extension)
+---
 
-### Installation
+## 🛠️ Tech Stack
 
-1. **Clone the repo**  
+- **HTML5**, **CSS3**, **JavaScript (ES6+)**
+- Fetch API for data
+- LocalStorage for persistence
+
+---
+
+## 🚀 Run Locally
+
+1. Clone this repo:
    ```bash
-   git clone https://github.com/MiladModasir/   rick-and-morty-favorites.git
-
-
-
-
+   git clone https://github.com/YOUR-USERNAME/rick-and-morty-favorites.git
