@@ -37,4 +37,4 @@ Browse characters, save your favorites, and get live stats on species distributi
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/rick-and-morty-favorites.git
+   git clone https://github.com/Miladmodasir/rick-and-morty-favorites.git
